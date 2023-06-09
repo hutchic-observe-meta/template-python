@@ -1,6 +1,6 @@
 ---
 additional:
-- template-terraform
+- python-repository-goes-here
 
 files:
 - '!README.md'
