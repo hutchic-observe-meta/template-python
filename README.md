@@ -1,0 +1,9 @@
+- set github setting
+  - allow auto-merge
+  - automatically delete head branches
+- set github branch protection rules:
+  - require a pull request before merging
+  - require status checks to pass
+    - pre-commit
+    - valid pr titles
+    - sync
