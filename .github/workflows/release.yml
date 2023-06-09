@@ -11,6 +11,11 @@ concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+permissions:
+    pull-requests: write
+    issues: write
+    contents: write
+
 jobs:
     release:
         runs-on: ubuntu-latest
@@ -22,4 +27,4 @@ jobs:
         - name: release
           uses: ahmadnassri/action-semantic-release@v2.2.3
           env:
-            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
