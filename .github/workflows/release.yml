@@ -19,7 +19,7 @@ jobs:
         - name: checkout
           uses: actions/checkout@v2
 
-        - name: semantic-release
-          uses: ahmadnassri/action-semantic-release@v2
+        - name: release
+          uses: ahmadnassri/action-semantic-release@v2.2.3
           env:
             GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
