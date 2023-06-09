@@ -7,7 +7,3 @@ github_actions:
 - .github/**
 python:
 - '**/*.py'
-go:
-- '**/*.go'
-terraform:
-- '**/*.tf'
