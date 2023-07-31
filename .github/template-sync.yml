@@ -1,7 +1,6 @@
 ---
 additional:
-- template-terraform
-- template-python
+- python-playground
 
 files:
 - '!README.md'
@@ -16,3 +15,8 @@ files:
 - '!.github/workflows/release.yml'
 - '!.github/settings.yml'
 - '!.releaserc'
+- '!requirements.txt'
+- '!entrypoint.sh'
+- '!Makefile'
+- '!Dockerfile'
+- '!.dockerignore'

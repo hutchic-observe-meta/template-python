@@ -6,12 +6,7 @@ updates:
   schedule:
     interval: daily
 
-- package-ecosystem: terraform
-  directory: /
-  schedule:
-    interval: daily
-
-- package-ecosystem: gitsubmodule
+- package-ecosystem: python
   directory: /
   schedule:
     interval: daily
