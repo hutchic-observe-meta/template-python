@@ -1,0 +1,18 @@
+---
+additional:
+- template-terraform
+- template-python
+
+files:
+- '!README.md'
+- '!.gitignore'
+- '!.pre-commit-config.yaml'
+- '!.yamllint'
+- '!.secrets.baseline'
+- '!.github/pull.yml'
+- '!.github/dependabot.yml'
+- '!.github/template-sync.yml'
+- '!.github/workflows/pre-commit-update.yml'
+- '!.github/workflows/release.yml'
+- '!.github/settings.yml'
+- '!.releaserc'

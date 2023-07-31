@@ -1,0 +1,30 @@
+---
+name: Release
+
+on:  # yamllint disable-line rule:truthy
+    pull_request:
+    push:
+      branches:
+        - main
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+    pull-requests: write
+    issues: write
+    contents: write
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: checkout
+          uses: actions/checkout@v3
+
+        - name: release
+          uses: ahmadnassri/action-semantic-release@v2.2.3
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

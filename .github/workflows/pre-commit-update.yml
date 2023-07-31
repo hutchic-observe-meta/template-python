@@ -1,0 +1,35 @@
+---
+name: Update pre-commit hooks
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: 0 7 * * 1
+
+permissions:
+    pull-requests: write
+    contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3.5.3
+      with:
+        fetch-depth: 0
+    - uses: vrslev/pre-commit-autoupdate@v1.0.0
+    - name: Generate a token
+      id: generate_token
+      uses: tibdex/github-app-token@v1
+      with:
+        app_id: ${{ secrets.APP_ID }}
+        private_key: ${{ secrets.PRIVATE_KEY }}
+    - uses: peter-evans/create-pull-request@v5.0.2
+      with:
+        branch: pre-commit-autoupdate
+        title: 'chore(deps): Update pre-commit hooks'
+        commit-message: 'chore(deps): Update pre-commit hooks'
+        body: Update pre-commit hooks
+        labels: dependencies
+        delete-branch: true
+        token: ${{ steps.generate_token.outputs.token }}
