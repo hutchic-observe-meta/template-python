@@ -22,6 +22,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v6.0.0
     - name: Sync
-      uses: ahmadnassri/action-template-repository-sync@v2.6.9
+      uses: ahmadnassri/action-template-repository-sync@v2.6.10
       with:
         github-token: ${{ steps.generate_token.outputs.token }}
